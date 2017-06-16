@@ -12,7 +12,7 @@ class DealsTableSeeder extends Seeder
     public function run()
     {
        Deal::firstOrCreate([
-           'category' => 'vehicels',
+           'category' => 'vehicles',
            'sub_category' => 'car',
            'title' => 'suzuki mehran 2015',
            'description' => 'car is in good condition for more detail call me',
@@ -23,13 +23,15 @@ class DealsTableSeeder extends Seeder
            'pic3' => 'sample3.png',
            'phone_no' => '123456789',
            'email' => 'user@gmail.com',
+           'user_name' => 'user1',
+           'city' => 'udhampur',
            'user_id' => 1,
        ]);
 
         Deal::firstOrCreate([
-            'category' => 'vehicels',
+            'category' => 'vehicles',
             'sub_category' => 'bus',
-            'title' => 'crolla',
+            'title' => 'chrolla',
             'description' => 'bus is in good condition for more detail call me',
             'duration' => '1day',
             'rent_amount' => 5000,
@@ -38,12 +40,14 @@ class DealsTableSeeder extends Seeder
             'pic3' => 'sample3.png',
             'phone_no' => '000748487',
             'email' => 'user@gmail.com',
+            'user_name' => 'user2',
+            'city' => 'islamabad',
             'user_id' => 1,
         ]);
 
 
         Deal::firstOrCreate([
-            'category' => 'real state',
+            'category' => 'property',
             'sub_category' => 'house',
             'title' => 'house in iqbal town',
             'description' => 'house have 3 living rooms, 1 bathroom, 1 kitchen and a lawn',
@@ -54,12 +58,14 @@ class DealsTableSeeder extends Seeder
             'pic3' => 'sample3.png',
             'phone_no' => '0333333787',
             'email' => 'user@gmail.com',
+            'user_name' => 'user3',
+            'city' => 'jammu',
             'user_id' => 1,
         ]);
 
         Deal::firstOrCreate([
-            'category' => 'real state',
-            'sub_category' => 'building',
+            'category' => 'property',
+            'sub_category' => 'apartment',
             'title' => '4 flour building in canal view',
             'description' => '4 flour each flour is well furnished',
             'duration' => '1year',
@@ -69,12 +75,14 @@ class DealsTableSeeder extends Seeder
             'pic3' => 'sample3.png',
             'phone_no' => '736436278',
             'email' => 'user@gmail.com',
+            'user_name' => 'user4',
+            'city' => 'leh',
             'user_id' => 1,
         ]);
 
         Deal::firstOrCreate([
-            'category' => 'real state',
-            'sub_category' => 'hotel',
+            'category' => 'property',
+            'sub_category' => 'guest house',
             'title' => 'mughal fork',
             'description' => 'hotel contail well furnished rooms',
             'duration' => '1day',
@@ -84,6 +92,8 @@ class DealsTableSeeder extends Seeder
             'pic3' => 'sample3.png',
             'phone_no' => '878547285',
             'email' => 'user@gmail.com',
+            'user_name' => 'user5',
+            'city' => 'budgam',
             'user_id' => 1,
         ]);
     }

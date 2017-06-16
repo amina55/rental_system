@@ -15,18 +15,20 @@ class CreateDealsTable extends Migration
     {
         Schema::create('deals', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('title', 100);
             $table->string('category', 50);
             $table->string('sub_category', 50);
-            $table->string('title', 100);
             $table->text('description');
             $table->enum('duration', ['1year', '1month', '1day']);
             $table->unsignedInteger('rent_amount');
             $table->string('pic1');
             $table->string('pic2')->nullable;
             $table->string('pic3')->nullable;
-            $table->string('phone_no');
-            $table->string('email');
-            $table->unsignedInteger('user_id');
+            $table->string('user_name', 100);
+            $table->string('phone_no', 30);
+            $table->string('email', 50);
+            $table->string('city', 50);
+            $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

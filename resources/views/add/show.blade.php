@@ -6,12 +6,8 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3>{{ $add->title }}</h3>
-                <div class="pull-left">
-                    <fa class="fa fa-lg fa-2x fa-map-marker"></fa>{{$add->city}}, India
-                </div>
-                <div class="pull-right">
-                    <p>Add added at <strong>{{ $add->created_at }}</strong></p>
-                </div>
+                <pre class="pull-left"><fa class="fa fa-lg fa-2x fa-map-marker"></fa>  {{$add->city}}, India        Add added at <strong>{{ $add->created_at }}</strong></pre>
+
             </div>
 
             <div class="panel-body">

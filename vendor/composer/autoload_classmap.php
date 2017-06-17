@@ -7,7 +7,9 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
+    'App\\Deal' => $baseDir . '/app/Deal.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
+    'App\\Http\\Controllers\\AddController' => $baseDir . '/app/Http/Controllers/AddController.php',
     'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => $baseDir . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
     'App\\Http\\Controllers\\Auth\\LoginController' => $baseDir . '/app/Http/Controllers/Auth/LoginController.php',
     'App\\Http\\Controllers\\Auth\\RegisterController' => $baseDir . '/app/Http/Controllers/Auth/RegisterController.php',
@@ -2049,6 +2051,7 @@ return array(
     'PhpParser\\Serializer\\XML' => $vendorDir . '/nikic/php-parser/lib/PhpParser/Serializer/XML.php',
     'PhpParser\\Unserializer' => $vendorDir . '/nikic/php-parser/lib/PhpParser/Unserializer.php',
     'PhpParser\\Unserializer\\XML' => $vendorDir . '/nikic/php-parser/lib/PhpParser/Unserializer/XML.php',
+    'PropertySeeder' => $baseDir . '/database/seeds/PropertySeeder.php',
     'Prophecy\\Argument' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument.php',
     'Prophecy\\Argument\\ArgumentsWildcard' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument/ArgumentsWildcard.php',
     'Prophecy\\Argument\\Token\\AnyValueToken' => $vendorDir . '/phpspec/prophecy/src/Prophecy/Argument/Token/AnyValueToken.php',
@@ -2928,6 +2931,7 @@ return array(
     'TijsVerkoyen\\CssToInlineStyles\\Css\\Rule\\Rule' => $vendorDir . '/tijsverkoyen/css-to-inline-styles/src/Css/Rule/Rule.php',
     'TransCommandTest' => $vendorDir . '/themsaid/laravel-langman/tests/TransCommandTest.php',
     'UsersTableSeeder' => $baseDir . '/database/seeds/UsersTableSeeder.php',
+    'VehicleSeeder' => $baseDir . '/database/seeds/VehicleSeeder.php',
     'Webmozart\\Assert\\Assert' => $vendorDir . '/webmozart/assert/src/Assert.php',
     'XdgBaseDir\\Xdg' => $vendorDir . '/dnoegel/php-xdg-base-dir/src/Xdg.php',
     'phpDocumentor\\Reflection\\DocBlock' => $vendorDir . '/phpdocumentor/reflection-docblock/src/DocBlock.php',

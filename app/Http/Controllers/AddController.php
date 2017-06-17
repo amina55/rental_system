@@ -13,11 +13,11 @@ class AddController extends Controller
         $deals = Deal::all()->toArray();
         return view('welcome', ['adds' => $deals]);
     }
+
     public function create()
     {
         return view('add.create', ['add' => null]);
     }
-
 
     public function store(Request $request)
     {

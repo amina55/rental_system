@@ -1,0 +1,12 @@
+.required-asterick{
+    color: red;
+    font-size: 15px;
+    padding-left: 5px;
+}
+.div-images{
+    height: 200px;
+}
+.image-height{
+    height: 100%;
+    width: 100%;
+}

@@ -22,11 +22,11 @@ class CreateDealsTable extends Migration
             $table->enum('duration', ['1year', '1month', '1day']);
             $table->unsignedInteger('rent_amount');
             $table->string('pic1');
-            $table->string('pic2')->nullable;
-            $table->string('pic3')->nullable;
+            $table->string('pic2')->nullable()->default('');
+            $table->string('pic3')->nullable()->default('');
             $table->string('user_name', 100);
             $table->string('phone_no', 30);
-            $table->string('email', 50);
+            $table->string('email', 50)->nullable()->default('');
             $table->string('city', 50);
             $table->unsignedInteger('user_id')->nullable();
             $table->timestamps();

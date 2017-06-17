@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Jun 17, 2017 at 11:18 AM
+-- Generation Time: Jun 17, 2017 at 03:32 PM
 -- Server version: 5.6.35
 -- PHP Version: 7.1.1
 
@@ -37,19 +37,20 @@ CREATE TABLE `deals` (
   `city` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status` enum('active','inactive') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'active',
+  `deactivate_reason` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `deals`
 --
 
-INSERT INTO `deals` (`id`, `title`, `category`, `sub_category`, `description`, `duration`, `rent_amount`, `pic1`, `pic2`, `pic3`, `user_name`, `phone_no`, `email`, `city`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 'Suzuki 2010 model 0909', 'vehicles', 'busboat', 'This is good pizza, eat it :P', '1day', 30000, 'JbwpEGyu6aHOg1Ac.jpeg', '', 'n4JuRsQEi8K600yD.jpeg', 'amina', '088877989889', NULL, 'kathua', 1, '2017-06-17 00:17:10', '2017-06-17 03:49:34'),
-(2, 'suzuki', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1day', 3000, 'o1yaQA4Qr15zO5WF.jpeg', 'jqdw9RgM55JD69lw.jpeg', 'uoZ3A0H0A74CQKNr.jpeg', 'tind cony', '8346746782374', 'cony@gmail.com', 'islamabad', 1, '2017-06-17 01:04:43', '2017-06-17 01:04:43'),
-(3, 'suzuki', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1day', 3000, 'hSK0bYPn7qT3zgbD.jpeg', 'JraaYz5fCDC0DjbN.jpeg', 'XW20nZ8ytZ9MmxfF.jpeg', 'tind cony', '8346746782374', 'cony@gmail.com', 'islamabad', NULL, '2017-06-17 01:06:21', '2017-06-17 01:06:21'),
-(4, 'chorolla', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1month', 20000, 'XrFJUBzxHzi9dCFK.jpeg', 'palLL62Gvhd77Io5.jpeg', 'ql8Og9PhHLjqeLYK.jpeg', 'sony', '74767474646', 'sony@gmail.com', 'pulwama', NULL, '2017-06-17 01:08:14', '2017-06-17 01:08:14'),
-(5, 'toyota', 'vehicles', 'tractors', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuj dgfcfg ygcffgfh cgfygscadg', '1year', 500000, 'lHMh91IntKxRQ4nu.jpeg', 'RrbufVI5HJR4dRtY.jpeg', 'AAMEaU4HfiG56JMg.jpeg', 'gagni', '42656546735', 'gagni@gmail.com', 'pulwama', NULL, '2017-06-17 01:10:30', '2017-06-17 01:10:30');
+INSERT INTO `deals` (`id`, `title`, `category`, `sub_category`, `description`, `duration`, `rent_amount`, `pic1`, `pic2`, `pic3`, `user_name`, `phone_no`, `email`, `city`, `user_id`, `created_at`, `updated_at`, `status`, `deactivate_reason`) VALUES
+(2, 'suzuki', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1day', 3000, 'o1yaQA4Qr15zO5WF.jpeg', 'jqdw9RgM55JD69lw.jpeg', 'uoZ3A0H0A74CQKNr.jpeg', 'tind cony', '8346746782374', 'cony@gmail.com', 'islamabad', 1, '2017-06-17 01:04:43', '2017-06-17 08:08:34', 'active', ''),
+(3, 'suzuki', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1day', 3000, 'hSK0bYPn7qT3zgbD.jpeg', 'JraaYz5fCDC0DjbN.jpeg', 'XW20nZ8ytZ9MmxfF.jpeg', 'tind cony', '8346746782374', 'cony@gmail.com', 'islamabad', NULL, '2017-06-17 01:06:21', '2017-06-17 01:06:21', 'active', ''),
+(4, 'chorolla', 'vehicles', 'car', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuubryftyjvterygejhbdghgsdhdhgfbxhjebgyervfgydj dgfcfg ygcffgfh cgfygscadg', '1month', 20000, 'XrFJUBzxHzi9dCFK.jpeg', 'palLL62Gvhd77Io5.jpeg', 'ql8Og9PhHLjqeLYK.jpeg', 'sony', '74767474646', 'sony@gmail.com', 'pulwama', NULL, '2017-06-17 01:08:14', '2017-06-17 01:08:14', 'active', ''),
+(5, 'toyota', 'vehicles', 'tractors', 'gsywysywsygduyqwt6qwrhsgytgdtbdrmiubnryuj dgfcfg ygcffgfh cgfygscadg', '1year', 500000, 'lHMh91IntKxRQ4nu.jpeg', 'RrbufVI5HJR4dRtY.jpeg', 'AAMEaU4HfiG56JMg.jpeg', 'gagni', '42656546735', 'gagni@gmail.com', 'pulwama', NULL, '2017-06-17 01:10:30', '2017-06-17 01:10:30', 'active', '');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (7, '2014_10_12_100000_create_password_resets_table', 1),
 (8, '2017_06_15_083900_create_deals_table', 1),
 (9, '2017_06_16_181953_create_vehicles_table', 1),
-(10, '2017_06_16_182005_create_properties_table', 1);
+(10, '2017_06_16_182005_create_properties_table', 1),
+(11, '2017_06_17_125700_add_status_in_deals_table', 2);
 
 -- --------------------------------------------------------
 
@@ -131,7 +133,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'amina', 'amina.nisar55@gmail.com', '$2y$10$btOikFMlNdWVcTTEqb0Dbeqe3OUXZQRFtS19AkHi22hVKvKGPanVm', 'mPHPR5fgaP2AVwYXXXV5T0ZHZtVlgtPY8U06hpcgr2lIAnfhiFsp2pRTlOHK', '2017-06-17 02:52:45', '2017-06-17 02:52:45');
+(1, 'amina', 'amina.nisar55@gmail.com', '$2y$10$btOikFMlNdWVcTTEqb0Dbeqe3OUXZQRFtS19AkHi22hVKvKGPanVm', 'JTkzdhEgIwAbtYhZCw31UOwCPdWhi4RdMWnKF5VKKSGpEq8uapxWnMBeXk9C', '2017-06-17 02:52:45', '2017-06-17 02:52:45');
 
 -- --------------------------------------------------------
 
@@ -201,7 +203,7 @@ ALTER TABLE `deals`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `properties`
 --

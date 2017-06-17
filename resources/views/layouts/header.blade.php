@@ -58,14 +58,14 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 @if(\Illuminate\Support\Facades\Auth::check())
-                    <li><a href="{{ route('home') }}"><span class="glyphicon glyphicon-user"></span> My Adds</a></li>
-                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><span class="glyphicon glyphicon-user"></span> Logout </a></li>
+                    <li><a href="{{ route('home') }}"><fa class="fa fa-lg fa-user"></fa>My Adds</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><fa class="fa fa-lg fa-sign-out"></fa> Logout </a></li>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
                 @else
-                    <li><a href="{{ route('login') }}"><span class="glyphicon glyphicon-user"></span> Login</a></li>
-                    <li><a href="{{ route('register') }}"> Register</a></li>
+                    <li><a href="{{ route('login') }}"><fa class="fa fa-lg fa-user"></fa> Login</a></li>
+                    <li><a href="{{ route('register') }}"><fa class="fa fa-lg fa-user-plus"></fa> Register</a></li>
                 @endif
             </ul>
         </div>

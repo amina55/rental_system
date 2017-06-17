@@ -7,13 +7,18 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>{{ $add->title }}</h3>
+                        {{--<div class="col-sm-12">
+                            <div class="col-sm-9"><h3>{{ $add->title }}</h3></div>\
+                            <div class="col-sm-3 pull-right"><h3>{{ $add->rent_amount }} / {{ $add->duration }}</h3></div>
+                        </div>--}}
+                        <p><strong class="fs25">{{ $add->title }}</strong>
+                        <strong class="fs15 pull-right">{{ $add->rent_amount }} ₹ / {{ $add->duration }}</strong></p>
                     </div>
 
                     <div class="panel-body">
 
-                        <p class="pull-left"><fa class="fa fa-lg fa-2x fa-map-marker"></fa>  {{$add->city}}, India
-                        <p class="pull-right">Add added at <strong>{{ $add->created_at }}</strong></p>
+                        <p class="pull-left"><fa class="fa fa-lg fa-2x fa-map-marker"></fa>  {{$add->city}}, India</p>
+                        <p class="pull-right"><fa class="fa fa-lg fa-2x fa-calendar-o"></fa> {{ $add->created_at }}</p>
 
                         <div class="col-sm-12">
                             @if($add->pic2 && $add->pic3)
@@ -61,11 +66,11 @@
 
                             <p>You can Contact this Seller.</p>
 
-                            <p><strong>User Name : {{$add->user_name}}</strong></p>
+                            <p> <fa class="fa fa-lg fa-user"></fa> <strong>{{$add->user_name}}</strong></p>
 
-                            <p><strong>Phone No. : {{$add->phone_no}}</strong></p>
+                            <p><fa class="fa fa-lg fa-phone"></fa><strong>{{$add->phone_no}}</strong></p>
                             @if($add->email)
-                                <p><strong>Email : {{$add->email}}</strong></p>
+                                <p><fa class="fa fa-lg fa-envelope"></fa><strong>{{$add->email}}</strong></p>
 
                             @endif
 

@@ -17,15 +17,20 @@
                 <tbody>
 
                 @foreach($adds as $add)
-                    <tr>
+                    <tr class="{{ ($add->status == 'active') ? 'success' : 'danger'}}">
                         <td> {{ $add->created_at }}</td>
                         <td> {{ $add->title }}</td>
-                        <td> {{ $add->rent_amount }} / {{ $add->duration }}</td>
+                        <td> {{ $add->rent_amount }} ₹/ {{ $add->duration }}</td>
                         <td>
-                            <a class="no-text-decoration" href="{{ route('add.show', $add) }}"><span class="glyphicon glyphicon-user"></span>preview</a>
-                            <a class="no-text-decoration" href="{{ route('add.edit', $add) }}"><span class="glyphicon glyphicon-user"></span>edit</a>
-                            {{--<a class="no-text-decoration" href="{{ route('add.delete', $add) }}">Delete</a>
---}}
+                            <a class="no-text-decoration" href="{{ route('add.show', $add) }}"><fa class="fa fa-lg fa-eye"></fa>preview</a>
+                            <a class="no-text-decoration" href="{{ route('add.edit', $add) }}"><fa class="fa fa-lg fa-pencil"></fa></span>edit</a>
+
+                            @if($add->status == 'active')
+                                <a class="no-text-decoration" href="{{ route('add.deactivate', $add) }}"><fa class="fa fa-lg fa-remove"></fa>Deactivate</a>
+                            @else
+                                <a class="no-text-decoration" href="{{ route('add.delete', $add) }}"><fa class="fa fa-lg fa-check"></fa>Delete</a>
+                                <a class="no-text-decoration" href="{{ route('add.activate', $add) }}"><fa class="fa fa-lg fa-check"></fa>Activate</a>
+                            @endif
                         </td>
                     </tr>
                 @endforeach

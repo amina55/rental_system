@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AddStatusInDealsTable' => $baseDir . '/database/migrations/2017_06_17_125700_add_status_in_deals_table.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Deal' => $baseDir . '/app/Deal.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',

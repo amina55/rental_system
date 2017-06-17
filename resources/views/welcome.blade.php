@@ -70,7 +70,7 @@
                     <div class="panel panel-primary">
                         <div class="panel-heading">{{ $adds[$i]['title'] }}</div>
                         <div class="panel-body div-images"><img src="{{ asset('uploads').'/'.$adds[$i]['pic1']}}" class="img-responsive image-height" alt="Image"></div>
-                        <div class="panel-footer">Rent price : {{ $adds[$i]['rent_amount'] }} / {{ $adds[$i]['duration'] }}</div>
+                        <div class="panel-footer">Rent price : {{ $adds[$i]['rent_amount'] }} ₹s/ {{ $adds[$i]['duration'] }}</div>
                     </div>
                 </a>
             </div>

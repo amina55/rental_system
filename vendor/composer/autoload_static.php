@@ -277,6 +277,7 @@ class ComposerStaticInit8fc6d13c899fe37aa70433701ef99537
     );
 
     public static $classMap = array (
+        'AddStatusInDealsTable' => __DIR__ . '/../..' . '/database/migrations/2017_06_17_125700_add_status_in_deals_table.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Deal' => __DIR__ . '/../..' . '/app/Deal.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',

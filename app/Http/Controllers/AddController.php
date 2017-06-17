@@ -10,7 +10,7 @@ class AddController extends Controller
 {
     public function index()
     {
-        $deals = Deal::all()->toArray();
+        $deals = Deal::where('status', 'active')->get()->toArray();
         return view('welcome', ['adds' => $deals]);
     }
 
@@ -72,26 +72,40 @@ class AddController extends Controller
     public function search(Request $request)
     {
         $params = $request->except(['_token']);
-        $whereClause = [];
+        $whereClause = ['status' => 'active'];
 
         if(empty($params['city']) && empty($params['category']) && empty($params['sub_category'])) {
-
             $deals = Deal::all();
-
         } else {
-
             ($params['city']) ? $whereClause['city'] = $params['city'] : '';
             ($params['category']) ? $whereClause['category'] = $params['category'] : '';
             ($params['sub_category']) ? $whereClause['sub_category'] = $params['sub_category'] : '';
-
             $deals = Deal::where($whereClause)->get();
-
         }
 
         $deals = $deals->toArray();
         $params['adds'] = $deals;
 
         return view('welcome', $params);
+    }
 
+    public function delete(Deal $add)
+    {
+        $add->delete();
+        return redirect()->back();
+    }
+
+    public function deactivate(Deal $add)
+    {
+        $add->status = 'inactive';
+        $add->save();
+        return redirect()->back();
+    }
+
+    public function activate(Deal $add)
+    {
+        $add->status = 'active';
+        $add->save();
+        return redirect()->back();
     }
 }

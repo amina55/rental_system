@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Online Renting System</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,7 +40,7 @@
 
 <div class="jumbotron">
     <div class="container text-center">
-        <h1>Online Rental Store</h1>
+        <h1>Online Renting System</h1>
         <p>India's Best Rental system for Vehicles and Property</p>
     </div>
 </div>
@@ -81,7 +81,7 @@
 <br><br>
 
 <footer class="container-fluid text-center">
-    <p>Online Rental Store Copyright</p>
+    <p>Online Renting SystemCopyright</p>
     {{--<form class="form-inline">Get deals:
         <input type="email" class="form-control" size="50" placeholder="Email Address">
         <button type="button" class="btn btn-danger">Sign Up</button>

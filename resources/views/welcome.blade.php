@@ -42,7 +42,7 @@
         <div class="row">
             @for($j = 0; $j < 3 && $i < $totalRecords; $j++, $i++)
             <div class="col-sm-4">
-                <a href="{{ route('add.show', [$adds[$i]['id']]) }}" class="text-decoration">
+                <a class="no-text-decoration" href="{{ route('add.show', [$adds[$i]['id']]) }}">
                     <div class="panel panel-primary">
                         <div class="panel-heading">{{ $adds[$i]['title'] }}</div>
                         <div class="panel-body div-images"><img src="{{ asset('uploads').'/'.$adds[$i]['pic1']}}" class="img-responsive image-height" alt="Image"></div>

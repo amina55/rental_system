@@ -10,3 +10,13 @@
     height: 100%;
     width: 100%;
 }
+.show-images {
+    height: 250px;
+    width: 100%
+}
+.description-div{
+    border: 1px solid black;
+    margin-top: 35px;
+    padding: 25px;
+
+}

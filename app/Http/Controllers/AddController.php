@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Deal;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AddController extends Controller
 {
@@ -36,6 +37,7 @@ class AddController extends Controller
                 }
             }
         }
+        $params['user_id'] = Auth::id();
         Deal::create($params);
         return redirect()->route('add.index');
     }

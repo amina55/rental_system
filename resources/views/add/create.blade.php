@@ -1,5 +1,7 @@
 @extends('layouts.header')
 @section('content')
+
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -58,7 +60,10 @@
                                     <select id="sub_category" class="form-control" name="sub_category" {{ ($add) ? 'disabled' : '' }} required>
                                         <option>-- Select a Sub Category --</option>
                                         @foreach($vehicles as $vehicle)
-                                            <option {{ ($subCategory == $vehicle) ? 'selected' : '' }} value="{{ $vehicle }}">{{ strtoupper($vehicle)}}</option>
+                                            <option {{  ($subCategory == $vehicle) ? 'selected' : '' }} class="vehicle-category" value="{{ $vehicle }}">{{ strtoupper($vehicle)}}</option>
+                                        @endforeach
+                                        @foreach($properties as $property)
+                                            <option {{  ($subCategory == $property) ? 'selected' : '' }} class="property-category" value="{{ $property }}">{{ strtoupper($property)}}</option>
                                         @endforeach
                                     </select>
 
@@ -240,4 +245,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        $('#category').change(function () {
+            var value = $(this).val();
+            alert(value);
+            if(value == 'vehicle') {
+                $('.vehicle-category').show();
+                $('.property-category').hide();
+
+            } else if (value == 'property') {
+                $('.vehicle-category').hide();
+                $('.property-category').show();
+            }
+        });
+    </script>
 @endsection

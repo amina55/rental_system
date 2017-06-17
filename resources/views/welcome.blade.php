@@ -1,24 +1,27 @@
 @extends('layouts.header')
 @section('content')
 
+
+
 <div class="container">
     <div class="row">
-        <form action="" method="post" class="form-horizontal">
+        <form action="{{ route('add.search') }}" method="post" class="form-horizontal">
+            {{ csrf_field() }}
 
             <?php $cities = config('myconfig.cities'); ?>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <select class="form-control" id="city" name="city">
                     <option value="">All Cities</option>
-                    @foreach($cities as $city)
-                        <option value="{{ $city }}">{{ strtoupper($city)}}</option>
+                    @foreach($cities as $ci)
+                        <option {{ (isset($city) && $city == $ci) ? 'selected' : '' }} value="{{ $ci }}">{{ strtoupper($ci)}}</option>
                     @endforeach
                 </select>
             </div>
-            <div class="col-sm-4">
+            <div class="col-sm-3">
                 <select class="form-control" id="category" name="category">
-                    <option>-- Select a Category --</option>
-                    <option>Vehicles</option>
-                    <option>Property</option>
+                    <option value="">-- Select a Category --</option>
+                    <option {{ (isset($category) && $category == 'vehicles') ? 'selected' : '' }} value="vehicles">Vehicles</option>
+                    <option {{ (isset($category) && $category == 'property') ? 'selected' : '' }} value="property">Property</option>
                 </select>
             </div>
 
@@ -26,15 +29,36 @@
             $properties = config('myconfig.category.property');?>
             <div class="col-sm-4">
                 <select class="form-control" id="sub_category" name="sub_category">
-                    <option>-- Select a Sub Category --</option>
+                    <option value="">-- Select a Sub Category --</option>
                     @foreach($vehicles as $vehicle)
-                        <option value="{{ $vehicle }}">{{ strtoupper($vehicle)}}</option>
+                        <option {{ (isset($sub_category) && $sub_category == $vehicle) ? 'selected' : '' }} class="vehicle-category" value="{{ $vehicle }}">{{ strtoupper($vehicle)}}</option>
+                    @endforeach
+                    @foreach($properties as $property)
+                        <option {{ (isset($sub_category) && $sub_category == $property) ? 'selected' : '' }} class="property-category" value="{{ $property }}">{{ strtoupper($property)}}</option>
                     @endforeach
                 </select>
+            </div>
+            <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary"> Search</button>
             </div>
         </form>
     </div>
 </div><br>
+
+<script>
+
+    $('#category').change(function () {
+        var value = $(this).val();
+        if(value == 'vehicle') {
+            $('.vehicle-category').show();
+            $('.property-category').hide();
+
+        } else if (value == 'property') {
+            $('.vehicle-category').hide();
+            $('.property-category').show();
+        }
+    });
+</script>
 
 <?php $totalRecords = count($adds); ?>
 @for($i = 0; $i< $totalRecords; )

@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/add/search', 'AddController@search')->name('add.search');
+
 Route::resource('add', 'AddController', ['only', ['index', 'create', 'store', 'edit', 'update', 'show']]);
 /*Route::get('/add/create', 'AddController@create')->name('add.create');
 Route::post('/add/store', 'AddController@store')->name('add.store');

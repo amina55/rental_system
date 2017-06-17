@@ -68,4 +68,30 @@ class AddController extends Controller
     {
         return view('add.show', ['add' => $add]);
     }
+
+    public function search(Request $request)
+    {
+        $params = $request->except(['_token']);
+        $whereClause = [];
+
+        if(empty($params['city']) && empty($params['category']) && empty($params['sub_category'])) {
+
+            $deals = Deal::all();
+
+        } else {
+
+            ($params['city']) ? $whereClause['city'] = $params['city'] : '';
+            ($params['category']) ? $whereClause['category'] = $params['category'] : '';
+            ($params['sub_category']) ? $whereClause['sub_category'] = $params['sub_category'] : '';
+
+            $deals = Deal::where($whereClause)->get();
+
+        }
+
+        $deals = $deals->toArray();
+        $params['adds'] = $deals;
+
+        return view('welcome', $params);
+
+    }
 }
